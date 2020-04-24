@@ -116,6 +116,32 @@ matrix:
     - "aws s3 cp revision.git s3://build.lwjgl.org/nightly/linux/mips64/libopus.so.git $S3_PARAMS"
 
   # -----------------
+  - name: "Linux ppc64le"
+  # -----------------
+    dist: xenial
+    language: c
+    compiler: gcc
+
+    addons:
+      apt:
+        packages:
+        - gcc-4.8-powerpc64le-linux-gnu
+        - libc6-dev-ppc64el-cross
+
+    before_install:
+    - pip install --user awscli
+    - export PATH=$PATH:$HOME/.local/bin
+
+    script:
+    - ./autogen.sh
+    - CC="powerpc64le-linux-gnu-gcc-4.8" ./configure $OPUS_PARAMS --build=x86_64-pc-linux-gnu --host=powerpc64le-linux-gnu
+    - make
+    - powerpc64le-linux-gnu-strip .libs/libopus.so
+    - "git log --first-parent --pretty=format:%H HEAD~2..HEAD~1 > revision.git"
+    - "aws s3 cp .libs/libopus.so s3://build.lwjgl.org/nightly/linux/ppc64le/ $S3_PARAMS"
+    - "aws s3 cp revision.git s3://build.lwjgl.org/nightly/linux/ppc64le/libopus.so.git $S3_PARAMS"
+
+  # -----------------
   - name: "macOS"
   # -----------------
     language: objective-c
