@@ -34,8 +34,8 @@ matrix:
     - make
     - strip .libs/libopus.so
     - "git log --first-parent --pretty=format:%H HEAD~2..HEAD~1 > revision.git"
-    - "aws s3 cp .libs/libopus.so s3://build.lwjgl.org/nightly/linux/x64/ $S3_PARAMS"
-    - "aws s3 cp revision.git s3://build.lwjgl.org/nightly/linux/x64/libopus.so.git $S3_PARAMS"
+    #- "aws s3 cp .libs/libopus.so s3://build.lwjgl.org/nightly/linux/x64/ $S3_PARAMS"
+    #- "aws s3 cp revision.git s3://build.lwjgl.org/nightly/linux/x64/libopus.so.git $S3_PARAMS"
 
   # -----------------
   - name: "Linux arm32"
@@ -60,8 +60,8 @@ matrix:
     - make
     - arm-linux-gnueabihf-strip .libs/libopus.so
     - "git log --first-parent --pretty=format:%H HEAD~2..HEAD~1 > revision.git"
-    - "aws s3 cp .libs/libopus.so s3://build.lwjgl.org/nightly/linux/arm32/ $S3_PARAMS"
-    - "aws s3 cp revision.git s3://build.lwjgl.org/nightly/linux/arm32/libopus.so.git $S3_PARAMS"
+    #- "aws s3 cp .libs/libopus.so s3://build.lwjgl.org/nightly/linux/arm32/ $S3_PARAMS"
+    #- "aws s3 cp revision.git s3://build.lwjgl.org/nightly/linux/arm32/libopus.so.git $S3_PARAMS"
 
   # -----------------
   - name: "Linux arm64"
@@ -86,8 +86,8 @@ matrix:
     - make
     - aarch64-linux-gnu-strip .libs/libopus.so
     - "git log --first-parent --pretty=format:%H HEAD~2..HEAD~1 > revision.git"
-    - "aws s3 cp .libs/libopus.so s3://build.lwjgl.org/nightly/linux/arm64/ $S3_PARAMS"
-    - "aws s3 cp revision.git s3://build.lwjgl.org/nightly/linux/arm64/libopus.so.git $S3_PARAMS"
+    #- "aws s3 cp .libs/libopus.so s3://build.lwjgl.org/nightly/linux/arm64/ $S3_PARAMS"
+    #- "aws s3 cp revision.git s3://build.lwjgl.org/nightly/linux/arm64/libopus.so.git $S3_PARAMS"
 
   # -----------------
   - name: "Linux mips64"
@@ -112,8 +112,8 @@ matrix:
     - make
     - mips64el-linux-gnuabi64-strip .libs/libopus.so
     - "git log --first-parent --pretty=format:%H HEAD~2..HEAD~1 > revision.git"
-    - "aws s3 cp .libs/libopus.so s3://build.lwjgl.org/nightly/linux/mips64/ $S3_PARAMS"
-    - "aws s3 cp revision.git s3://build.lwjgl.org/nightly/linux/mips64/libopus.so.git $S3_PARAMS"
+    #- "aws s3 cp .libs/libopus.so s3://build.lwjgl.org/nightly/linux/mips64/ $S3_PARAMS"
+    #- "aws s3 cp revision.git s3://build.lwjgl.org/nightly/linux/mips64/libopus.so.git $S3_PARAMS"
 
   # -----------------
   - name: "Linux ppc64le"
@@ -138,8 +138,8 @@ matrix:
     - make
     - powerpc64le-linux-gnu-strip .libs/libopus.so
     - "git log --first-parent --pretty=format:%H HEAD~2..HEAD~1 > revision.git"
-    - "aws s3 cp .libs/libopus.so s3://build.lwjgl.org/nightly/linux/ppc64le/ $S3_PARAMS"
-    - "aws s3 cp revision.git s3://build.lwjgl.org/nightly/linux/ppc64le/libopus.so.git $S3_PARAMS"
+    #- "aws s3 cp .libs/libopus.so s3://build.lwjgl.org/nightly/linux/ppc64le/ $S3_PARAMS"
+    #- "aws s3 cp revision.git s3://build.lwjgl.org/nightly/linux/ppc64le/libopus.so.git $S3_PARAMS"
 
   # -----------------
   - name: "macOS"
@@ -160,5 +160,5 @@ matrix:
     - make
     - strip -u -r .libs/libopus.dylib
     - "git log --first-parent --pretty=format:%H HEAD~2..HEAD~1 > revision.git"
-    - "aws s3 cp .libs/libopus.dylib s3://build.lwjgl.org/nightly/macosx/x64/ $S3_PARAMS"
-    - "aws s3 cp revision.git s3://build.lwjgl.org/nightly/macosx/x64/libopus.dylib.git $S3_PARAMS"
+    #- "aws s3 cp .libs/libopus.dylib s3://build.lwjgl.org/nightly/macosx/x64/ $S3_PARAMS"
+    #- "aws s3 cp revision.git s3://build.lwjgl.org/nightly/macosx/x64/libopus.dylib.git $S3_PARAMS"
