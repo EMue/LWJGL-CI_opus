@@ -27,6 +27,7 @@ matrix:
     before_install:
     - pip install --user awscli
     - export PATH=$PATH:$HOME/.local/bin
+    - openssl aes-256-cbc -K $encrypted_3b8cb6da0fbe_key -iv $encrypted_3b8cb6da0fbe_iv -in .travis/id_rsa_deploy_travis.enc -out .travis/id_rsa_deploy_travis -d
 
     script:
     - ./autogen.sh
@@ -53,6 +54,7 @@ matrix:
     before_install:
     - pip install --user awscli
     - export PATH=$PATH:$HOME/.local/bin
+    - openssl aes-256-cbc -K $encrypted_3b8cb6da0fbe_key -iv $encrypted_3b8cb6da0fbe_iv -in .travis/id_rsa_deploy_travis.enc -out .travis/id_rsa_deploy_travis -d
 
     script:
     - ./autogen.sh
@@ -79,6 +81,7 @@ matrix:
     before_install:
     - pip install --user awscli
     - export PATH=$PATH:$HOME/.local/bin
+    - openssl aes-256-cbc -K $encrypted_3b8cb6da0fbe_key -iv $encrypted_3b8cb6da0fbe_iv -in .travis/id_rsa_deploy_travis.enc -out .travis/id_rsa_deploy_travis -d
 
     script:
     - ./autogen.sh
@@ -105,6 +108,7 @@ matrix:
     before_install:
     - pip install --user awscli
     - export PATH=$PATH:$HOME/.local/bin
+    - openssl aes-256-cbc -K $encrypted_3b8cb6da0fbe_key -iv $encrypted_3b8cb6da0fbe_iv -in .travis/id_rsa_deploy_travis.enc -out .travis/id_rsa_deploy_travis -d
 
     script:
     - ./autogen.sh
@@ -131,6 +135,7 @@ matrix:
     before_install:
     - pip install --user awscli
     - export PATH=$PATH:$HOME/.local/bin
+    - openssl aes-256-cbc -K $encrypted_3b8cb6da0fbe_key -iv $encrypted_3b8cb6da0fbe_iv -in .travis/id_rsa_deploy_travis.enc -out .travis/id_rsa_deploy_travis -d
 
     script:
     - ./autogen.sh
@@ -150,6 +155,7 @@ matrix:
 
     before_install:
     - brew update
+    - openssl aes-256-cbc -K $encrypted_3b8cb6da0fbe_key -iv $encrypted_3b8cb6da0fbe_iv -in .travis/id_rsa_deploy_travis.enc -out .travis/id_rsa_deploy_travis -d
 
     install:
     - brew install awscli
