@@ -14,6 +14,9 @@ m4_define([CURRENT_VERSION],
 
 AC_INIT([opus],[CURRENT_VERSION],[opus@xiph.org])
 
+dnl LWJGL
+AM_CONDITIONAL([LWJGL_x64], [test "$LWJGL_ARCH" = "x64"])
+
 AC_CONFIG_SRCDIR(src/opus_encoder.c)
 AC_CONFIG_MACRO_DIR([m4])
 
